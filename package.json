@@ -1,6 +1,6 @@
 {
   "name": "kalki-ui-hooks",
-  "description": "A collection of React hooks for UI development",
+  "description": "A curated collection of custom React hooks that help you build better user interfaces. Each hook is thoroughly tested, well-documented, and follows React best practices.",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/kalki-ui-hooks.umd.cjs",

@@ -1,69 +1,111 @@
-# React + TypeScript + Vite
+# kalki-ui-hooks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **curated collection of custom React hooks** that help you build better, more maintainable user interfaces.
+Each hook is **thoroughly tested**, **well-documented**, and follows **React best practices** — so you can focus on shipping features, not boilerplate.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+* 📦 **Plug-and-play** hooks ready for production use
+* 🧪 **Tested & documented** for reliability
+* 🛠 **Follows React conventions** and hook naming standards
+* 📚 **Categorized for easy discovery**
+* 🌐 Includes both **utility** and **browser API** integrations
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install kalki-ui-hooks
+# or
+yarn add kalki-ui-hooks
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📚 Available Hooks
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### **State Management**
+
+`useLocalStorage`, `useSessionStorage`, `usePrevious`, `useToggle`, `useCounter`, `useArray`, `useMap`, `useSet`
+
+### **Performance**
+
+`useDebounce`, `useThrottle`, `useWhyDidYouUpdate`, `useMemoOne`
+
+### **React Built-in**
+
+`useState`, `useEffect`, `useContext`, `useCallback`, `useReducer`, `useMemo`, `useRef`, `useImperativeHandle`, `useLayoutEffect`, `useDebugValue`, `useId`, `useTransition`, `useDeferredValue`, `useSyncExternalStore`, `useInsertionEffect`
+
+### **DOM Events**
+
+`useClickOutside`, `useEventListener`, `useKeyPress`, `useHover`, `useFocus`, `useLongPress`, `useDrag`, `useIntersectionObserver`, `useResizeObserver`, `useMutationObserver`
+
+### **Responsive**
+
+`useMediaQuery`, `useWindowSize`, `useBreakpoint`, `useOrientation`
+
+### **Network**
+
+`useFetch`, `useAsync`, `useSWR`, `useQuery`, `useWebSocket`, `useOnlineStatus`
+
+### **Timers**
+
+`useTimeout`, `useInterval`, `useCountdown`
+
+### **Animation**
+
+`useAnimation`, `useSpring`
+
+### **Forms**
+
+`useForm`, `useInput`, `useFormValidation`, `useClipboard`
+
+### **Utility**
+
+`useIsMounted`, `useUpdateEffect`, `useMount`, `useUnmount`, `useDeepCompareEffect`, `useIsFirstRender`, `useRenderCount`, `useLatest`
+
+### **Browser APIs**
+
+`useGeolocation`, `useBattery`, `usePermission`, `usePageVisibility`, `useIdle`, `useFullscreen`, `useNotification`, `useShare`
+
+### **Storage**
+
+`useIndexedDB`, `useCookie`, `useHistoryState`
+
+### **Development**
+
+`useLogger`, `useTrace`
+
+---
+
+## 🚀 Usage Example
+
+```jsx
+import React from "react";
+import { useLocalStorage } from "kalki-ui-hooks";
+
+export default function App() {
+  const [name, setName] = useLocalStorage("username", "Guest");
+
+  return (
+    <div>
+      <h1>Hello, {name}!</h1>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter your name"
+      />
+    </div>
+  );
+}
 ```
+
+---
+
+## 📄 License
+
+MIT © [Ravi Teja Ladi](https://github.com/RaviTejaLadi/kalki-ui-hooks)
+
