@@ -8,8 +8,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
-      name: "kalki-ui-hooks",
-      fileName: (format) => `kalki-ui-hooks.${format}.js`,
+      name: "KalkiUIHooks",
+      fileName: (format) => `kalki-ui-hooks.${format}.js`, // will create .js instead of .cjs for UMD
+      formats: ["es", "umd"],
     },
     rollupOptions: {
       external: ["react", "react-dom"],

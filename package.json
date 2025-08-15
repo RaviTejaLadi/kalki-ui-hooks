@@ -1,9 +1,9 @@
 {
   "name": "kalki-ui-hooks",
   "description": "A curated collection of custom React hooks that help you build better user interfaces. Each hook is thoroughly tested, well-documented, and follows React best practices.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
-  "main": "./dist/kalki-ui-hooks.umd.js",
+  "main": "./dist/kalki-ui-hooks.umd.cjs",
   "module": "./dist/kalki-ui-hooks.es.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -14,9 +14,9 @@
     "lint": "eslint .",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
