@@ -1,2 +1,2 @@
-export * from "./useLocalStorage";
-export * from "./useSessionStorage";
+export * from "./state-management/useLocalStorage";
+export * from "./state-management/useSessionStorage";
