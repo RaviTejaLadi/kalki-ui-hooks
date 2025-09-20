@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
  * @template T The type of the stored value.
  * @param {string} key - The key in `localStorage` to store the value.
  * @param {T} initialValue - The initial value to use if the key is not found in `localStorage`.
- * @returns {[T, React.Dispatch<React.SetStateAction<T>>]} 
+ * @returns {[T, React.Dispatch<React.SetStateAction<T>>]}
  * An array containing:
  *  - The current stateful value.
  *  - A setter function to update the value (just like `useState`).
