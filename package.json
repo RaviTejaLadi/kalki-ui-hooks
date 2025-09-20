@@ -1,10 +1,11 @@
 {
   "name": "kalki-ui-hooks",
   "description": "A curated collection of custom React hooks that help you build better user interfaces. Each hook is thoroughly tested, well-documented, and follows React best practices.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -16,7 +17,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc -b && vite build",
+    "build": "vite build && tsc --project tsconfig.build.json",
     "lint": "eslint .",
     "prepublishOnly": "npm run build",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|tsx|json)\""
@@ -38,7 +39,28 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2",
+    "vite-plugin-dts": "^4.3.0",
     "prettier": "^2.6.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "hooks",
+    "typescript",
+    "state-management",
+    "utility",
+    "custom-hooks"
+  ],
+  "author": {
+    "name": "Kalki UI",
+    "url": "https://github.com/kalki-ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kalki-ui/kalki-ui-hooks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kalki-ui/kalki-ui-hooks/issues"
+  },
+  "homepage": "https://github.com/kalki-ui/kalki-ui-hooks#readme"
 }

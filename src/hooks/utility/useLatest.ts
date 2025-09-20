@@ -1,4 +1,5 @@
-import { useRef, MutableRefObject } from "react";
+import { useRef } from "react";
+import type { MutableRefObject } from "react";
 
 /**
  * Hook that returns a ref which always contains the latest value.

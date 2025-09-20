@@ -1,9 +1,10 @@
-import { useEffect, useRef, DependencyList, EffectCallback } from "react";
+import { useEffect, useRef } from "react";
+import type { DependencyList, EffectCallback } from "react";
 
 /**
  * Deep equality comparison function
  */
-function deepEqual(a: any, b: any): boolean {
+function deepEqual(a: unknown, b: unknown): boolean {
   if (a === b) return true;
 
   if (a == null || b == null) return a === b;
@@ -21,7 +22,7 @@ function deepEqual(a: any, b: any): boolean {
 
   for (const key of keysA) {
     if (!keysB.includes(key)) return false;
-    if (!deepEqual(a[key], b[key])) return false;
+    if (!deepEqual((a as Record<string, unknown>)[key], (b as Record<string, unknown>)[key])) return false;
   }
 
   return true;
@@ -54,7 +55,7 @@ export function useDeepCompareEffect(
   effect: EffectCallback,
   deps?: DependencyList
 ): void {
-  const ref = useRef<DependencyList | undefined>();
+  const ref = useRef<DependencyList | undefined>(undefined);
   const signalRef = useRef<number>(0);
 
   if (!deps || !deepEqual(deps, ref.current)) {
@@ -62,5 +63,7 @@ export function useDeepCompareEffect(
     signalRef.current += 1;
   }
 
-  useEffect(effect, [signalRef.current]);
+  useEffect(() => {
+    effect();
+  }, [effect]);
 }

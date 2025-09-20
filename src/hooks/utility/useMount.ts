@@ -23,5 +23,5 @@ import { useEffect } from "react";
 export function useMount(fn: () => void): void {
   useEffect(() => {
     fn();
-  }, []); // Empty dependency array ensures this runs only once
+  }, [fn]); // Include fn in dependencies
 }

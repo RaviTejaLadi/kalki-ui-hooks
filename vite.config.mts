@@ -10,9 +10,11 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "KalkiUIHooks",
-      fileName: (format, entryName) => `${entryName}.${format}.js`, // will create .js instead of .cjs for UMD
+      fileName: (format, entryName) => `${entryName}.${format}.js`,
       formats: ["es", "cjs"],
     },
+    sourcemap: true,
+    minify: false,
     rollupOptions: {
       external: [...Object.keys(peerDependencies || {})],
       output: {
